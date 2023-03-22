@@ -10,6 +10,7 @@ def encode(password):
             new_char = "2"
         else:
             new_char = str(int(i) + 3)
+        new_password += new_char
     return new_password
 
 def main():
