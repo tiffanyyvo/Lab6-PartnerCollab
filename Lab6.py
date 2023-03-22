@@ -13,7 +13,26 @@ def encode(password):
         new_password += new_char
     return new_password
 
+
+# Anya Roselin
+def decode(encoded_password):
+    original_password = ""
+    new_char = ""
+    for i in encoded_password:
+        if int(i) == 0:
+            new_char = "7"
+        elif int(i) == 1:
+            new_char = "8"
+        elif int(i) == 2:
+            new_char = "9"
+        else:
+            new_char = str(int(i) - 3)
+        original_password += new_char
+    return original_password
+
+
 def main():
+    encoded_password = None
     while True:
         print("Menu")
         print("-------------")
@@ -31,11 +50,13 @@ def main():
             print()
 
         if option == "2":
-            print(f"The encoded password is {encoded_password}, and the original password is {password}.")
+            decoded_password = decode(encoded_password)
+            print(f"The encoded password is {encoded_password}, and the original password is {decoded_password}.")
             print()
 
         if option == "3":
             break
+
 
 if __name__ == '__main__':
     main()
