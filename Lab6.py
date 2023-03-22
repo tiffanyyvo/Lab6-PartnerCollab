@@ -1,11 +1,16 @@
 def encode(password):
     new_password = ""
+    new_char = ""
     for i in password:
-
-        new_char = str(int(i) + 3)
-        new_password += new_char
+        if int(i) == 7:
+            new_char = "0"
+        elif int(i) == 8:
+            new_char = "1"
+        elif int(i) == 9:
+            new_char = "2"
+        else:
+            new_char = str(int(i) + 3)
     return new_password
-
 
 def main():
     while True:
